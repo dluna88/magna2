@@ -20,5 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/asistente', [App\Http\Controllers\HomeController::class, 'asistente'])->name('asistente');
-Route::get('/cotizador', [App\Http\Controllers\HomeController::class, 'cotizador'])->name('cotizardor');
+Route::get('/layout', [App\Http\Controllers\HomeController::class, 'layout'])->name('layout');
+Route::get('/cotizacion', [App\Http\Controllers\HomeController::class, 'cotizacion'])->name('cotizacion');
+Route::get('/rfq', [App\Http\Controllers\HomeController::class, 'rfq'])->name('rfq');
