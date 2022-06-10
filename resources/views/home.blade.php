@@ -3,83 +3,53 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
-        <div class="col-8 g-0">
+    <div class="row mb-3">
+        <ul id="stepper" class="list-group list-group-horizontal list-group-numbered">
+            <li id="uploadfile" class="list-group-item stepButton active">
+                <i class="fa-regular fa-file-lines"></i> Previous Project
+            </li>
+            <li id="geometry" class="list-group-item stepButton">
+                <i class="fa-solid fa-bezier-curve"></i> Geometry stations
+            </li>
+            <li id="shield" class="list-group-item stepButton">
+                <i class="fa-solid fa-shield-halved"></i> Shield stations
+            </li>
+            <li id="spotting" class="list-group-item stepButton">
+                <i class="fa-brands fa-hubspot"></i> Spotting stations
+            </li>
+            <li id="robots" class="list-group-item stepButton">
+                <i class="fa-solid fa-robot"></i> Robots
+            </li>
+            <li id="buffer" class="list-group-item stepButton">
+                <i class="fa-brands fa-buffer"></i> Buffer
+            </li>
+            <li id="conveyors" class="list-group-item stepButton">
+                <i class="fa-solid fa-bandage"></i> Conveyors
+            </li>
+            <li id="fencing" class="list-group-item stepButton">
+                <i class="fa-solid fa-border-none"></i> Fencing
+            </li>
 
-            <div class="container">
-                <div class="row mb-3">
-                    <div id="tb-uploadfile"  class="row mb-3 justify-content-center toolbar">
-                        <div class="col-10">
-                            <div class="card">
-                                <div class="card-body">
-                                    <form method="post" action="">
-                                        @csrf
-                                        <label for="formFile" class="form-label">
-                                            <h4><i class="fa-solid fa-paperclip"></i> Attach file (optional)</h4>
-                                            <p>If you have a previous model or want to enrich with more information, you can upload a file here.</p>
-                                        </label>
-                                        <input class="form-control" type="file" id="formFile">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tb-geometry" class="btn-group d-none toolbar" role="group">
-                        <button type="button" class="btn btn-secondary">Geometry</button>
-                        <button type="button" class="btn btn-secondary">Middle</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                    </div>
-                    <div id="tb-shield" class="btn-group d-none toolbar" role="group">
-                        <button type="button" class="btn btn-secondary">Shield</button>
-                        <button type="button" class="btn btn-secondary">Middle</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                    </div>
-                    <div id="tb-spotting" class="btn-group d-none toolbar" role="group">
-                        <button type="button" class="btn btn-secondary">Spotting</button>
-                        <button type="button" class="btn btn-secondary">Middle</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                    </div>
-                    <div id="tb-robots" class="btn-group d-none toolbar" role="group">
-                        <button type="button" class="btn btn-secondary">Robots</button>
-                        <button type="button" class="btn btn-secondary">Middle</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                    </div>
-                    <div id="tb-buffer" class="btn-group d-none toolbar" role="group">
-                        <button type="button" class="btn btn-secondary">Buffer</button>
-                        <button type="button" class="btn btn-secondary">Middle</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                    </div>
-                    <div id="tb-conveyors" class="btn-group d-none toolbar" role="group">
-                        <button type="button" class="btn btn-secondary">Conveyors</button>
-                        <button type="button" class="btn btn-secondary">Middle</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                    </div>
-                    <div id="tb-fencing" class="btn-group d-none toolbar" role="group">
-                        <button type="button" class="btn btn-secondary">fencing</button>
-                        <button type="button" class="btn btn-secondary">Middle</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
-                    </div>
+        </ul>
+    </div>
+    <div id="tb-uploadfile"  class="row mb-3 justify-content-center toolbar">
+        <div class="col-10">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" action="">
+                        @csrf
+                        <label for="formFile" class="form-label">
+                            <h4><i class="fa-solid fa-paperclip"></i> Attach file (optional)</h4>
+                            <p>If you have a previous model or want to enrich with more information, you can upload a file here.</p>
+                        </label>
+                        <input class="form-control" type="file" id="formFile">
+                    </form>
                 </div>
             </div>
-
+        </div>
+    </div>
+    <div class="row">
+        <div class="col g-0">
             <div id="maingrid" class="container d-none">
                 <div id="a" class="row g-0">
                     <div id="a1" class="col square"></div>
@@ -105,43 +75,58 @@
                     <div id="d3" class="col square"></div>
                     <div id="d4" class="col square"></div>
                 </div>
-                
             </div>
-
         </div>
-        <div class="col-4 d-flex align-items-start">
+        <!-- sidebar -->
+        <div class="col-3">
             
-            <!-- SIDEBAR -->
-            <ul id="sidebar" class="list-group">
-                <li id="uploadfile" class="list-group-item sidebarButton active">
-                    <i class="fa-regular fa-file-lines"></i> Previous Project
-                </li>
-                <li id="geometry" class="list-group-item sidebarButton">
-                    <i class="fa-solid fa-bezier-curve"></i> Geometry stations
-                </li>
-                <li id="shield" class="list-group-item sidebarButton">
-                    <i class="fa-solid fa-shield-halved"></i> Shield stations
-                </li>
-                <li id="spotting" class="list-group-item sidebarButton">
-                    <i class="fa-brands fa-hubspot"></i> Spotting stations
-                </li>
-                <li id="robots" class="list-group-item sidebarButton">
-                    <i class="fa-solid fa-robot"></i> Robots
-                </li>
-                <li id="buffer" class="list-group-item sidebarButton">
-                    <i class="fa-brands fa-buffer"></i> Buffer
-                </li>
-                <li id="conveyors" class="list-group-item sidebarButton">
-                    <i class="fa-solid fa-bandage"></i> Conveyors
-                </li>
-                <li id="fencing" class="list-group-item sidebarButton">
-                    <i class="fa-solid fa-border-none"></i> Fencing
-                </li>
-
+            <ul id="tb-geometry" class="list-group d-none toolbar">
+                <li id="sometool" class="list-group-item tool">An item</li>
+                <li id="anothertool" class="list-group-item tool">A second item</li>
+                <li id="athirdtool" class="list-group-item tool">A third item</li>
+                <li id="foutrhtool" class="list-group-item tool">A fourth item</li>
+                <li id="fifth tool here" class="list-group-item tool">And a fifth one</li>
             </ul>
-            <!-- end SIDEBAR -->
 
+            <ul id="tb-shield" class="list-group d-none toolbar">
+                <li id="sometool" class="list-group-item tool">An item</li>
+                <li id="anothertool" class="list-group-item tool">A second item</li>
+            </ul>
+
+            <ul id="tb-spotting" class="list-group d-none toolbar">
+                <li id="foutrhtool" class="list-group-item tool">A fourth item</li>
+                <li id="fifth tool here" class="list-group-item tool">And a fifth one</li>
+            </ul>
+
+            <ul id="tb-robots" class="list-group d-none toolbar">
+                <li id="sometool" class="list-group-item tool">An item</li>
+                <li id="anothertool" class="list-group-item tool">A second item</li>
+                <li id="athirdtool" class="list-group-item tool">A third item</li>
+                <li id="fifth tool here" class="list-group-item tool">And a fifth one</li>
+            </ul>
+
+            <ul id="tb-buffer" class="list-group d-none toolbar">
+                <li id="anothertool" class="list-group-item tool">A second item</li>
+                <li id="foutrhtool" class="list-group-item tool">A fourth item</li>
+                <li id="fifth tool here" class="list-group-item tool">And a fifth one</li>
+            </ul>
+
+            <ul id="tb-conveyors" class="list-group d-none toolbar">
+                <li id="fifth tool here" class="list-group-item tool">And a fifth one</li>
+                <li id="sometool" class="list-group-item tool">An item</li>
+                <li id="anothertool" class="list-group-item tool">A second item</li>
+            </ul>
+
+            <ul id="tb-fencing" class="list-group d-none toolbar">
+                <li id="athirdtool" class="list-group-item tool">A third item</li>
+                <li id="sometool" class="list-group-item tool">An item</li>
+                <li id="foutrhtool" class="list-group-item tool">A fourth item</li>
+                <li id="fifth tool here" class="list-group-item tool">And a fifth one</li>
+                <li id="anothertool" class="list-group-item tool">A second item</li>
+            </ul>
+            
         </div>
+        <!-- end sidebars -->
     </div>
 </div>
 
@@ -153,10 +138,28 @@
 
     $(document).ready(function(){
         
-        
+        let tool = null;
 
-        $(".sidebarButton").click(function(){
-            $(".sidebarButton").removeClass('active')
+        $(".tool").click(function(){
+            tool = $(this).attr('id');
+            $(".tool").removeClass("active")
+            $(this).addClass("active")
+        })
+
+        $(".square").click(function(){
+            id = $(this).attr("id")
+            if(tool !== null){
+                console.log("I'll put the tool "+tool+" on square: "+id)
+            }else{
+                console.log("clicked on square: "+id+" but there's no tool selected")
+            }
+            
+        })
+
+        $(".stepButton").click(function(){
+            $(".stepButton").removeClass('active')
+            tool = null;
+            $(".tool").removeClass("active")
             $(this).addClass('active')
             let id = $(this).attr('id')
             $(".toolbar").addClass('d-none')
