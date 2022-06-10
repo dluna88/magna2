@@ -20,3 +20,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/asistente', [App\Http\Controllers\HomeController::class, 'asistente'])->name('asistente');
+Route::get('/cotizador', [App\Http\Controllers\HomeController::class, 'cotizador'])->name('cotizardor');
